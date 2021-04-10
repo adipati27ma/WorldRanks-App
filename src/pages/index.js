@@ -1,17 +1,20 @@
 import Head from 'next/head';
+import Layout from '../components/Layout/layout';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Home({ countries }) {
+  console.log(countries);
 
-      <main className={styles.main}>main</main>
-
-      <footer className={styles.footer}>footer</footer>
-    </div>
-  );
+  return <Layout>maine</Layout>;
 }
+
+export const getStaticprops = async () => {
+  const res = await fetch(`https://restcountries.eu/rest/v2/all`);
+  const countries = await res.json();
+
+  return {
+    props: {
+      countries,
+    },
+  };
+};
