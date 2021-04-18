@@ -21,6 +21,7 @@ body {
   font-family: var(--font-family);
   background-color: var(--background-color);
   color: var(--text-color);
+  font-weight: 500;
 }
 
 a {

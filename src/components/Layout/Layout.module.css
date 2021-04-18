@@ -13,6 +13,10 @@
   margin-bottom: 32px;
 }
 
+.header svg {
+  cursor: pointer;
+}
+
 .footer {
   margin-top: 32px;
   text-align: center;
