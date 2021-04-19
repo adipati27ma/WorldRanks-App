@@ -1,7 +1,7 @@
 import { Brightness6Rounded } from '@material-ui/icons';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Layout.module.css';
 
 const Layout = ({
@@ -11,12 +11,22 @@ const Layout = ({
 }) => {
   const [theme, setTheme] = useState('light');
 
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      'data-theme',
+      localStorage.getItem('theme')
+    );
+    setTheme(localStorage.getItem('theme'));
+  }, []);
+
   const switchTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
+      localStorage.setItem('theme', 'dark');
       document.documentElement.setAttribute('data-theme', 'dark');
     } else {
       setTheme('light');
+      localStorage.setItem('theme', 'light');
       document.documentElement.setAttribute('data-theme', 'light');
     }
   };
