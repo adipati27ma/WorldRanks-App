@@ -11,6 +11,12 @@ const Layout = ({
 }) => {
   const [theme, setTheme] = useState('light');
 
+  const saveTheme = (theme) => {
+    setTheme(theme);
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+  };
+
   useEffect(() => {
     document.documentElement.setAttribute(
       'data-theme',
@@ -20,15 +26,7 @@ const Layout = ({
   }, []);
 
   const switchTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-      localStorage.setItem('theme', 'dark');
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      setTheme('light');
-      localStorage.setItem('theme', 'light');
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
+    theme === 'light' ? saveTheme('dark') : saveTheme('light');
   };
 
   return (
