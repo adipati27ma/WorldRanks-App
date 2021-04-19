@@ -57,6 +57,7 @@
   font-weight: 500;
 
   transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .row:hover {
@@ -91,4 +92,16 @@
 .flag img {
   border-radius: 2px;
   width: 100%;
+}
+
+@media screen and (max-width: 720px) {
+
+  .area,
+  .gini,
+  .flag,
+  .heading_area,
+  .heading_gini,
+  .heading_flag {
+    display: none
+  }
 }

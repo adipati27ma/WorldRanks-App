@@ -108,8 +108,8 @@ const CountriesTable = ({ countries }) => {
             </div>
             <div className={styles.name}>{country.name}</div>
             <div className={styles.population}>{country.population}</div>
-            <div className={styles.population}>{country.area || 0}</div>
-            <div className={styles.population}>{country.gini || 0} %</div>
+            <div className={styles.area}>{country.area || 0}</div>
+            <div className={styles.gini}>{country.gini || 0} %</div>
           </div>
         </Link>
       ))}
