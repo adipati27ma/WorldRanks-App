@@ -68,3 +68,29 @@
 .details_label {
   color: var(--text-color-secondary);
 }
+
+/* borders country */
+.details_borders {
+  padding: 20px;
+}
+
+.details_borders_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 24px;
+}
+
+.details_borders img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15);
+}
+
+.details_borders_country {
+  text-align: center;
+}
+
+.details_borders_label {
+  color: var(--text-color-secondary);
+  margin: 12px auto 32px auto;
+}
