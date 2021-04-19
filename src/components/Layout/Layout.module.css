@@ -25,3 +25,17 @@
   text-align: center;
   font-size: 0.75rem;
 }
+
+.themeSwitcher {
+  border: none;
+  background-color: transparent;
+  margin-left: 4px;
+  padding: 0;
+
+  color: var(--text-color-secondary);
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

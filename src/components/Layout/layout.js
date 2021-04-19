@@ -1,5 +1,7 @@
+import { Brightness6Rounded } from '@material-ui/icons';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from './Layout.module.css';
 
 const Layout = ({
@@ -7,6 +9,18 @@ const Layout = ({
   title,
   fullTitle = title ? `World Ranks | ${title}` : `World Ranks`,
 }) => {
+  const [theme, setTheme] = useState('light');
+
+  const switchTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      setTheme('light');
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -42,6 +56,10 @@ const Layout = ({
             <rect y="4" width="7.33333" height="4.4" rx="2" fill="#21B6B7" />
           </svg>
         </Link>
+
+        <button className={styles.themeSwitcher} onClick={switchTheme}>
+          <Brightness6Rounded />
+        </button>
       </header>
 
       <main className={styles.main}>{children}</main>
